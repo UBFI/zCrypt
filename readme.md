@@ -5,7 +5,7 @@ Every generation will be unique and have a completely random sequence. zCrypt al
 It's main purpose is to hide strings and shellcode arrays from automated analysis.<br>
 A hosted version can be accessed [here](https://ubfi.github.io/zCrypt/index.html).
 # What are rounds?
-Each round is a randomly bit-wise operation added to the final 'de-obfuscation' process when the binary is executed.<br>
+Each round is a randomly selected bit-wise operation added to the final 'de-obfuscation' process when the binary is executed.<br>
 This can make reverse engineering or automated detection more difficult as scantime will not contain the final array or strings.
 # How do I use it?
 A good example it to use msfvenom to generate an array and converting is using the C format when generating.<br>
