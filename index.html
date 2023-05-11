@@ -331,7 +331,7 @@ ZCrypt.clean_shellcode = function(s)
 </script>
 
 <style>
-      body { color: #d9d9d9; background-color: #0c0d10; margin-top: 10px;margin-bottom: 0px; }
+      body { color: #d9d9d9; background-color: #0c0d10; margin-top: 10px;margin-bottom: 0px; font-family: monospace;}
        pre { font-family: "unscii", "Lucida Console", monospace, Monaco; font-size: 18px; line-height: 1.0; }
          a { color: #93f1ff; text-decoration: none; }
          w { color: white; }
@@ -391,36 +391,32 @@ for (unsigned int m = 0; m &lt; sizeof(s); ++m)
 <p>DISABLE STACK PROTECTION WHEN COMPILED! Scroll down for more info.</p>
 
 <p>
-<h1>What is zCrypt?</h1>
-<br>
-    zCrypt is a java script based client-side application that mutates strings and shellcode with C arrays and randomized bit-shift. It's main purpose is to hide strings and shellcode arrays from automated analysis.<br>
-	<h1>What are rounds?</h1>
-<br>
-    Each round is a bit shift which adds an extra instruction to the 'de-obfuscation' process. This can make reverse engineering or automated detection more difficult!<br>
-	<h1>How do I use it?</h1>
-<br>
-    A good example it to use msfvenom to generate an array and converting is using the C format when generating.<br>
+<h3>What is zCrypt?</h3><a>
+    zCrypt is a java script based client-side application that mutates strings and shellcode with C arrays and randomized bit-shift. It's main purpose is to hide strings and shellcode arrays from automated analysis.<br></a>
+	<h3>What are rounds?</h3><a>
+    Each round is a bit shift which adds an extra instruction to the 'de-obfuscation' process. This can make reverse engineering or automated detection more difficult!<br></a>
+	<h3>How do I use it?</h3><a>
+    A good example it to use msfvenom to generate an array and converting is using the C format when generating.</a>
 
 </p> 
 
 <p>
-<h1>Disable Stack Protection using mingw-w64 for Windows PEs</h1><br>
-x86_64-w64-mingw32-gcc main.c -o main.exe -fno-stack-protector -z execstack<br>
+<h3>Disable Stack Protection using mingw-w64 for Windows PEs</h3><a>
+x86_64-w64-mingw32-gcc main.c -o main.exe -fno-stack-protector -z execstack</a>
 </p>
 
 <p>
-<h1>Disable Stack Protection using GCC for Linux ELFs</h1><br>
-gcc main.c -o main -fno-stack-protector -z execstack -no-pie<br>
+<h3>Disable Stack Protection using GCC for Linux ELFs</h3><a>
+gcc main.c -o main -fno-stack-protector -z execstack -no-pie</a>
 </p>
 
 <p>
-<h1>Disable Stack Protection in Visual Studio for Windows PEs</h1>
-<br>
-    Open your project in Visual Studio.<br>
+<h3>Disable Stack Protection in Visual Studio for Windows PEs</h3>
+  <a>  Open your project in Visual Studio.<br>
     Right-click on your project in the Solution Explorer and select "Properties." -><br>
     In the project properties window, navigate to the "Configuration Properties" section. -><br>
     Open the "C/C++" category and select "Code Generation." -><br>
     In the right-hand pane, locate the "Buffer Security Check" option. -><br>
     Change the value of "Buffer Security Check" to "No (/GS-)" to disable stack protection. -><br>
-    Click "Apply" and then "OK" to save the changes. Profit!<br>
+    Click "Apply" and then "OK" to save the changes. Profit!</a>
 </p> 
