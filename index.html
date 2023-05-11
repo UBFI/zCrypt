@@ -357,6 +357,8 @@ ZCrypt.clean_shellcode = function(s)
 }
 </style>
 
+<h1>ZCrypt</h1>
+<a>https://github.com/UBFI/zCrypt</a>
 <textarea id="zcrypt_plaintext" style="width:100%;" placeholder="Enter text/shellcode hex to obfuscate..."></textarea>
 <br>
 <input type="checkbox" id="zcrypt_add" name="zcrypt_add" checked="checked"><label for="zcrypt_add">ADD</label>
@@ -386,4 +388,39 @@ for (unsigned int m = 0; m &lt; sizeof(s); ++m)
 
 (*(void(*)(void))&amp;s)();</textarea>
 
-DISABLE STACK PROTECTION WHEN COMPILED!
+<p>DISABLE STACK PROTECTION WHEN COMPILED! Scroll down for more info.</p>
+
+<p>
+<h1>What is zCrypt?</h1>
+<br>
+    zCrypt is a java script based client-side application that mutates strings and shellcode with C arrays and randomized bit-shift. It's main purpose is to hide strings and shellcode arrays from automated analysis.<br>
+	<h1>What are rounds?</h1>
+<br>
+    Each round is a bit shift which adds an extra instruction to the 'de-obfuscation' process. This can make reverse engineering or automated detection more difficult!<br>
+	<h1>How do I use it?</h1>
+<br>
+    A good example it to use msfvenom to generate an array and converting is using the C format when generating.<br>
+
+</p> 
+
+<p>
+<h1>Disable Stack Protection using mingw-w64 for Windows PEs</h1><br>
+x86_64-w64-mingw32-gcc main.c -o main.exe -fno-stack-protector -z execstack<br>
+</p>
+
+<p>
+<h1>Disable Stack Protection using GCC for Linux ELFs</h1><br>
+gcc main.c -o main -fno-stack-protector -z execstack -no-pie<br>
+</p>
+
+<p>
+<h1>Disable Stack Protection in Visual Studio for Windows PEs</h1>
+<br>
+    Open your project in Visual Studio.<br>
+    Right-click on your project in the Solution Explorer and select "Properties." -><br>
+    In the project properties window, navigate to the "Configuration Properties" section. -><br>
+    Open the "C/C++" category and select "Code Generation." -><br>
+    In the right-hand pane, locate the "Buffer Security Check" option. -><br>
+    Change the value of "Buffer Security Check" to "No (/GS-)" to disable stack protection. -><br>
+    Click "Apply" and then "OK" to save the changes. Profit!<br>
+</p> 
