@@ -5,7 +5,7 @@ It's main purpose is to hide strings and shellcode arrays from automated analysi
 # What are rounds?
 Each round is a bit-wise operation added to the final 'de-obfuscation' process when the binary is executed. This can make reverse engineering or automated detection more difficult as scantime will not contain the final array or strings.
 # How do I use it?
-A good example it to use msfvenom to generate an array and converting is using the C format when generating.
+A good example it to use msfvenom to generate an array and converting is using the C format when generating. You can also use the strings function with something like 'start calc.exe' then checking the binary for the string.
 
 ## Disable Stack Protection using mingw-w64 for Windows PEs
 >x86_64-w64-mingw32-gcc main.c -o main.exe -fno-stack-protector -z execstack
