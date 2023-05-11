@@ -1,5 +1,6 @@
 # What is zCrypt?
-zCrypt is a java script based client-side application that mutates strings and shellcode with C arrays and randomized bit-shift. It's main purpose is to hide strings and shellcode arrays from automated analysis.
+zCrypt is a C array obfuscation technique using randomized bitwise operations of C arrays at runtime.
+It's main purpose is to hide strings and shellcode arrays from automated analysis. A hosted version can be accessed [here](https://ubfi.github.io/zCrypt/index.html).
 # What are rounds?
 Each round is a bit shift which adds an extra instruction to the 'de-obfuscation' process. This can make reverse engineering or automated detection more difficult!
 # How do I use it?
